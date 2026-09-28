@@ -66,3 +66,21 @@ class TextAnalyzer:
             return []
         max_count = max(self.letter_counts.values())
         return [char for char, count in self.letter_counts.items() if count == max_count]
+
+    def save_report(self, output_path: Path | str) -> None:
+        lines = [
+            "=== Результати аналізу тексту ===",
+            f"Загальна кількість слів: {self.get_total_words_count()}",
+            f"Кількість унікальних слів: {self.get_unique_words_count()}",
+            f"Найкоротші слова: {', '.join(self.get_shortest_words())}",
+            f"Найдовші слова: {', '.join(self.get_longest_words())}",
+            f"Використані літери: {', '.join(self.get_used_letters())}",
+            f"Найчастіша літера: {', '.join(self.get_most_frequent_letter())}",
+            "\nЧастотний словник слів (%):"
+        ]
+
+        for word, pct in self.get_frequency_dict_pct().items():
+            lines.append(f"  {word}: {pct}%")
+
+        with open(output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(lines))
