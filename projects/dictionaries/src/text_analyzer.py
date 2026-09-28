@@ -69,7 +69,7 @@ class TextAnalyzer:
 
     def save_report(self, output_path: Path | str) -> None:
         lines = [
-            "=== Результати аналізу тексту ===",
+            "== Результати аналізу тексту ==",
             f"Загальна кількість слів: {self.get_total_words_count()}",
             f"Кількість унікальних слів: {self.get_unique_words_count()}",
             f"Найкоротші слова: {', '.join(self.get_shortest_words())}",
