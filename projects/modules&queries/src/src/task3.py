@@ -18,11 +18,11 @@ SITES = [
 
 
 def run() -> None:
-    url = random.choice(SITES)                         # модуль random
-    now = datetime.now().strftime("%d.%m.%Y %H:%M:%S")  # модуль datetime
+    url = random.choice(SITES)                         
+    now = datetime.now().strftime("%d.%m.%Y %H:%M:%S")  
 
     try:
-        response = requests.get(url, timeout=5)        # модуль requests
+        response = requests.get(url, timeout=5)        
         print(f"[{now}] {url} -> {response.status_code}")
     except requests.exceptions.RequestException as error:
         print(f"[{now}] {url} -> помилка з'єднання: {error}")

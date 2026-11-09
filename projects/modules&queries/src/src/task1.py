@@ -23,18 +23,18 @@ def generate_password(length: int) -> str:
     if length < 3:
         raise ValueError("Довжина пароля має бути не менше 3 символів")
 
-    # Гарантуємо хоча б по одному символу з кожної групи
+    
     password = [
         secrets.choice(HEX_CHARS),
         secrets.choice(PUNCTUATION),
         secrets.choice(UPPERCASE),
     ]
 
-    # Решту символів беремо з усіх груп разом
+    
     pool = HEX_CHARS + PUNCTUATION + UPPERCASE
     password += [secrets.choice(pool) for _ in range(length - 3)]
 
-    # Перемішуємо, щоб обов'язкові символи не стояли завжди на початку
+    
     random.SystemRandom().shuffle(password)
     return "".join(password)
 
