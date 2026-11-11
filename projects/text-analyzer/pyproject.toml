@@ -1,0 +1,20 @@
+[project]
+name = "text-analyzer"
+version = "0.1.0"
+description = "Аналіз тексту (укр./англ.): кількість слів і словник частотності"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "nltk>=3.9",
+    "pymorphy3>=2.0",
+    "pymorphy3-dicts-uk>=2.4.1.1.1663094765",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

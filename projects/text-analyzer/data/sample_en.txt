@@ -1,0 +1,11 @@
+Language is one of the most remarkable tools that people have ever created. We use it to share ideas, to tell stories, to ask questions and to build friendships. Every language has its own sounds, words and rules, yet all of them help people understand one another. Linguists study these systems carefully, and today they often work together with programmers.
+
+Computers cannot understand a sentence the way a person does, but they can count, compare and sort very quickly. This is why text analysis has become so useful. A simple program can read a file, split the text into words and show which words appear most often. Such a result may look modest, but it already tells us a lot about the style and the topic of a text.
+
+Imagine that you have a short article about the sea. The words water, wave and ship will probably appear many times, while rare words will appear only once. A frequency dictionary shows this difference at once.
+
+Of course, a good program must be careful. Sometimes a file is empty, and then there is nothing to analyze. Sometimes the file does not exist, or the computer cannot read it because of a wrong encoding. A reliable program should not simply crash in these cases. Instead, it should explain the problem clearly and let the user try again.
+
+Testing is another important habit. When we write automated tests, we check that the program counts words correctly, ignores punctuation and treats capital letters in the same way as small ones. If we change the code later, the tests quickly show whether something has broken.
+
+In the end, a small project like this teaches several lessons at once: how to work with files, how to process text, how to handle errors and how to keep the code clean.
